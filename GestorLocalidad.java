@@ -1,26 +1,44 @@
 package modelo.gestoresplazas;
 
+import anotacion.Programacion2;
 import list.IList;
 import modelo.gestoresplazas.huecos.Hueco;
 import modelo.reservas.solicitudesreservas.SolicitudReservaAnticipada;
 
 //TO-DO alumno obligatorio
+@Programacion2 (
+nombreAutor1 = "nombre",
+apellidoAutor1 = "apellido1 apellido2",
+emailUPMAutor1 = "usr@alumnos.upm.es",
+nombreAutor2 = "",
+apellidoAutor2 = "",
+emailUPMAutor2 = ""
+)
+
+
+
 
 public class GestorLocalidad {
-	//TO-DO falta atributo
+	
+	private GestorZona[][] gestoresZonas;
 
 	public GestorLocalidad(int[][] plazas, double[][] precios) {
-		//TO-DO
+		
+		for(int i=0;i<plazas.length;i++) {
+			gestoresZonas=new GestorZona[plazas.length][plazas[i].length];
+			
+			for(int j=0;j<plazas[i].length;j++) {
+				gestoresZonas[i][j]=new GestorZona(i,j,plazas[i][j],precios[i][j]);
+			}
+		}
 	}
 	
 	public int getRadioMaxI() {
-		//TO-DO
-		return - 1;
+		return gestoresZonas.length-1;
 	}
 	
 	public int getRadioMaxJ() {
-		//TO-DO
-		return - 1;
+		return gestoresZonas[0].length;
 	}
 	
 	public boolean existeZona(int i, int j) {
@@ -29,13 +47,13 @@ public class GestorLocalidad {
 	}
 
 	public boolean existeHuecoReservado(Hueco hueco, int i, int j) {
-		//TO-DO
+	
 		return false;
 	}
 
 	public GestorZona getGestorZona(int i, int j) {
 		//TO-DO
-		return null;
+		return gestoresZonas[i][j];
 	}
 	
 	//TO-DO alumno opcional
