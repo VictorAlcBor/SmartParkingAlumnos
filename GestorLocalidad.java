@@ -52,7 +52,6 @@ public class GestorLocalidad {
 	}
 
 	public GestorZona getGestorZona(int i, int j) {
-		//TO-DO
 		return gestoresZonas[i][j];
 	}
 	
