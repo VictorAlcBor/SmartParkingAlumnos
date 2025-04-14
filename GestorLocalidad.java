@@ -47,7 +47,7 @@ public class GestorLocalidad {
 	}
 
 	public boolean existeHuecoReservado(Hueco hueco, int i, int j) {
-	
+		//TO-DO
 		return false;
 	}
 
