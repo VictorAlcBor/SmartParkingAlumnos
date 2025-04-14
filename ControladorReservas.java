@@ -13,10 +13,13 @@ import modelo.vehiculos.Vehiculo;
 import anotacion.Programacion2;
 
 @Programacion2 (
-		nombreAutor1 = "",
-		apellidoAutor1 = "",
-		emailUPMAutor1 = ""
-		)
+nombreAutor1 = "David",
+apellidoAutor1 = "Romero Palomo",
+emailUPMAutor1 = "david.romero.palomo@alumnos.upm.es",
+nombreAutor2 = "Victor",
+apellidoAutor2 = "Alcolea Borque",
+emailUPMAutor2 = ""
+)
 
 public class ControladorReservas {
 	private Reservas registroReservas;
@@ -41,13 +44,15 @@ public class ControladorReservas {
 	//TO-DO alumno obligatorio
 
 	public ControladorReservas(int[][] plazas, double[][] precios) {
-		//TO-DO
+		this.gestorLocalidad=new GestorLocalidad(plazas,precios);
+		this.registroReservas=new Reservas();
 	}
 
 
 	//PRE: la solicitud es válida
 	public int hacerReserva(SolicitudReserva solicitud) throws SolicitudReservaInvalida {
 		//TO-DO
+		
 		return -1;
 	}
 
